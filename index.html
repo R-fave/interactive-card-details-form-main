@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./src/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/styles.css">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <main>
+    <section class="card-section">
+      <div class="card-back">
+        <p id="card-cvc">000</p>
+      </div>
+      <div class="card-front">
+        <svg width="84" height="47" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff"/><path d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z" stroke="#fff"/></svg>
+        <p id="card-num">0000 0000 0000 0000</p>
+
+        <div>
+          <span id="user-name">Jane Appleseed</span>
+          <span id="card-exp">00/00</span>
+        </div>
+        
+      </div>
+    </section>
+
+
+    <section class="form">
+        <div id="form-content">
+          <label for="cardholder">Cardholder Name</label>
+          <input type="text" placeholder="e.g. Jane Appleseed" required id="cardholder">
+          <p class="invalid" id="name-val"></p>
+          <label for="cardnumber">Card Number</label>
+          <input id="cardnumber" type="tel" inputmode="numeric" pattern="[0-9\s]{19,19}" minlength="19" maxlength="19" placeholder="e.g. 1234 5678 9123 0000" required oninput="formatCardNumber()">
+          <p class="invalid" id="num-val"></p>
+          <div>
+            <div>
+              <label for="exp-month">Exp. Date (MM/YY)</label>
+              <div>
+                <input id="exp-month" type="number" min="1" max="12" placeholder="MM" required>
+                <input id="exp-year" type="number" min="20" max="29" placeholder="YY" required>
+              </div>
+              <p class="invalid" id="date-val"></p>
+            </div>
+
+            <div>
+              <label for="cardcvc">CVC</label>
+              <input id="cardcvc" type="tel" inputmode="numeric" placeholder="123" minlength="3" maxlength="3" required class="align">
+              <p class="invalid" id="cvc-val"></p>
+            </div>
+          </div>
+          
+        </div>
+        <input id="submit-btn" type="submit" value="Confirm">
+
+        <div class="attribution">
+          <p>Challenge by <a href="https://www.frontendmentor.io/profile/R-fave" target="_blank">Frontend Mentor</a>. 
+          Coded by <a href="#">@R-fave</a>.</p>
+        </div>
+    </section>
+  </main>
+  
+
+
+  <script src="./src/index.js"></script>
+</body>
+</html>
